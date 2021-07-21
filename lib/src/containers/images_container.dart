@@ -1,0 +1,21 @@
+import 'package:built_collection/built_collection.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
+import 'package:weather_app/src/models/index.dart';
+
+class ImagesContainer extends StatelessWidget {
+  const ImagesContainer({Key? key, required this.builder}) : super(key: key);
+
+  final ViewModelBuilder<BuiltList<Photo>> builder;
+
+  @override
+  Widget build(BuildContext context) {
+    return StoreConnector<AppState, BuiltList<Photo>>(
+      converter: (Store<AppState> store) {
+        return store.state.photos;
+      },
+      builder: builder,
+    );
+  }
+}
