@@ -1,4 +1,4 @@
-# dogs_app
+# images_app
 
 A new Flutter project.
 
