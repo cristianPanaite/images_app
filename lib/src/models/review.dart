@@ -18,7 +18,7 @@ abstract class Review implements Built<Review, ReviewBuilder> {
     });
   }
 
-  factory Review.fromJson(dynamic json) => serializers.deserializeWith(serializer, json) as Review;
+  factory Review.fromJson(dynamic json) => serializers.deserializeWith(serializer, json)!;
 
   Review._();
 
@@ -32,7 +32,7 @@ abstract class Review implements Built<Review, ReviewBuilder> {
 
   DateTime get createdAt;
 
-  Map<String, dynamic> get json => serializers.serializeWith(serializer, this) as Map<String, dynamic>;
+  Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
 
   static Serializer<Review> get serializer => _$reviewSerializer;
 }

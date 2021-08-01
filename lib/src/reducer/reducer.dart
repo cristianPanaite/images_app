@@ -4,7 +4,7 @@ import 'package:weather_app/src/models/index.dart';
 
 Reducer<AppState> reducer = combineReducers(
   <Reducer<AppState>>[
-        (AppState state, dynamic action) {
+    (AppState state, dynamic action) {
       print(action);
       return state;
     },

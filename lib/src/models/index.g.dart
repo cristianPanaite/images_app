@@ -19,14 +19,12 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
   final String wireName = 'Photo';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Photo object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(Serializers serializers, Photo object, {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
       'description',
-      serializers.serialize(object.description,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.description, specifiedType: const FullType(String)),
       'urls',
       serializers.serialize(object.urls, specifiedType: const FullType(Urls)),
     ];
@@ -46,16 +44,13 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
       final Object? value = iterator.current;
       switch (key) {
         case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'description':
-          result.description = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.description = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'urls':
-          result.urls.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Urls))! as Urls);
+          result.urls.replace(serializers.deserialize(value, specifiedType: const FullType(Urls))! as Urls);
           break;
       }
     }
@@ -71,16 +66,14 @@ class _$UrlsSerializer implements StructuredSerializer<Urls> {
   final String wireName = 'Urls';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Urls object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(Serializers serializers, Urls object, {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'full',
       serializers.serialize(object.full, specifiedType: const FullType(String)),
       'raw',
       serializers.serialize(object.raw, specifiedType: const FullType(String)),
       'regular',
-      serializers.serialize(object.regular,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.regular, specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -98,16 +91,13 @@ class _$UrlsSerializer implements StructuredSerializer<Urls> {
       final Object? value = iterator.current;
       switch (key) {
         case 'full':
-          result.full = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.full = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'raw':
-          result.raw = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.raw = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'regular':
-          result.regular = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.regular = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -128,31 +118,20 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
     final result = <Object?>[
       'users',
       serializers.serialize(object.users,
-          specifiedType: const FullType(BuiltMap,
-              const [const FullType(String), const FullType(AppUser)])),
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(AppUser)])),
       'reviews',
-      serializers.serialize(object.reviews,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(Review)])),
+      serializers.serialize(object.reviews, specifiedType: const FullType(BuiltList, const [const FullType(Review)])),
       'photos',
-      serializers.serialize(object.photos,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(Photo)])),
+      serializers.serialize(object.photos, specifiedType: const FullType(BuiltList, const [const FullType(Photo)])),
     ];
     Object? value;
     value = object.user;
     if (value != null) {
-      result
-        ..add('user')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(AppUser)));
+      result..add('user')..add(serializers.serialize(value, specifiedType: const FullType(AppUser)));
     }
     value = object.selectedImage;
     if (value != null) {
-      result
-        ..add('selectedImage')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+      result..add('selectedImage')..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     return result;
   }
@@ -169,29 +148,22 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
       final Object? value = iterator.current;
       switch (key) {
         case 'user':
-          result.user.replace(serializers.deserialize(value,
-              specifiedType: const FullType(AppUser))! as AppUser);
+          result.user.replace(serializers.deserialize(value, specifiedType: const FullType(AppUser))! as AppUser);
           break;
         case 'users':
           result.users.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltMap,
-                  const [const FullType(String), const FullType(AppUser)]))!);
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(AppUser)]))!);
           break;
         case 'reviews':
           result.reviews.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      BuiltList, const [const FullType(Review)]))!
-              as BuiltList<Object?>);
+              specifiedType: const FullType(BuiltList, const [const FullType(Review)]))! as BuiltList<Object?>);
           break;
         case 'photos':
           result.photos.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, const [const FullType(Photo)]))!
-              as BuiltList<Object?>);
+              specifiedType: const FullType(BuiltList, const [const FullType(Photo)]))! as BuiltList<Object?>);
           break;
         case 'selectedImage':
-          result.selectedImage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.selectedImage = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -213,19 +185,14 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
       'uid',
       serializers.serialize(object.uid, specifiedType: const FullType(String)),
       'username',
-      serializers.serialize(object.username,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.username, specifiedType: const FullType(String)),
       'email',
-      serializers.serialize(object.email,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.email, specifiedType: const FullType(String)),
     ];
     Object? value;
     value = object.photoUrl;
     if (value != null) {
-      result
-        ..add('photoUrl')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+      result..add('photoUrl')..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     return result;
   }
@@ -242,20 +209,16 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
       final Object? value = iterator.current;
       switch (key) {
         case 'uid':
-          result.uid = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.uid = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'username':
-          result.username = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.username = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'email':
-          result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.email = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'photoUrl':
-          result.photoUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.photoUrl = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -271,21 +234,18 @@ class _$ReviewSerializer implements StructuredSerializer<Review> {
   final String wireName = 'Review';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Review object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(Serializers serializers, Review object, {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
       'uid',
       serializers.serialize(object.uid, specifiedType: const FullType(String)),
       'imageId',
-      serializers.serialize(object.imageId,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.imageId, specifiedType: const FullType(String)),
       'text',
       serializers.serialize(object.text, specifiedType: const FullType(String)),
       'createdAt',
-      serializers.serialize(object.createdAt,
-          specifiedType: const FullType(DateTime)),
+      serializers.serialize(object.createdAt, specifiedType: const FullType(DateTime)),
     ];
 
     return result;
@@ -303,24 +263,19 @@ class _$ReviewSerializer implements StructuredSerializer<Review> {
       final Object? value = iterator.current;
       switch (key) {
         case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'uid':
-          result.uid = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.uid = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'imageId':
-          result.imageId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.imageId = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'text':
-          result.text = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.text = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'createdAt':
-          result.createdAt = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
+          result.createdAt = serializers.deserialize(value, specifiedType: const FullType(DateTime)) as DateTime;
           break;
       }
     }
@@ -337,19 +292,16 @@ class _$Photo extends Photo {
   @override
   final Urls urls;
 
-  factory _$Photo([void Function(PhotoBuilder)? updates]) =>
-      (new PhotoBuilder()..update(updates)).build();
+  factory _$Photo([void Function(PhotoBuilder)? updates]) => (new PhotoBuilder()..update(updates)).build();
 
-  _$Photo._({required this.id, required this.description, required this.urls})
-      : super._() {
+  _$Photo._({required this.id, required this.description, required this.urls}) : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'Photo', 'id');
     BuiltValueNullFieldError.checkNotNull(description, 'Photo', 'description');
     BuiltValueNullFieldError.checkNotNull(urls, 'Photo', 'urls');
   }
 
   @override
-  Photo rebuild(void Function(PhotoBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Photo rebuild(void Function(PhotoBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   PhotoBuilder toBuilder() => new PhotoBuilder()..replace(this);
@@ -357,24 +309,17 @@ class _$Photo extends Photo {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Photo &&
-        id == other.id &&
-        description == other.description &&
-        urls == other.urls;
+    return other is Photo && id == other.id && description == other.description && urls == other.urls;
   }
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, id.hashCode), description.hashCode), urls.hashCode));
+    return $jf($jc($jc($jc(0, id.hashCode), description.hashCode), urls.hashCode));
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Photo')
-          ..add('id', id)
-          ..add('description', description)
-          ..add('urls', urls))
+    return (newBuiltValueToStringHelper('Photo')..add('id', id)..add('description', description)..add('urls', urls))
         .toString();
   }
 }
@@ -425,8 +370,7 @@ class PhotoBuilder implements Builder<Photo, PhotoBuilder> {
       _$result = _$v ??
           new _$Photo._(
               id: BuiltValueNullFieldError.checkNotNull(id, 'Photo', 'id'),
-              description: BuiltValueNullFieldError.checkNotNull(
-                  description, 'Photo', 'description'),
+              description: BuiltValueNullFieldError.checkNotNull(description, 'Photo', 'description'),
               urls: urls.build());
     } catch (_) {
       late String _$failedField;
@@ -434,8 +378,7 @@ class PhotoBuilder implements Builder<Photo, PhotoBuilder> {
         _$failedField = 'urls';
         urls.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'Photo', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('Photo', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -452,19 +395,16 @@ class _$Urls extends Urls {
   @override
   final String regular;
 
-  factory _$Urls([void Function(UrlsBuilder)? updates]) =>
-      (new UrlsBuilder()..update(updates)).build();
+  factory _$Urls([void Function(UrlsBuilder)? updates]) => (new UrlsBuilder()..update(updates)).build();
 
-  _$Urls._({required this.full, required this.raw, required this.regular})
-      : super._() {
+  _$Urls._({required this.full, required this.raw, required this.regular}) : super._() {
     BuiltValueNullFieldError.checkNotNull(full, 'Urls', 'full');
     BuiltValueNullFieldError.checkNotNull(raw, 'Urls', 'raw');
     BuiltValueNullFieldError.checkNotNull(regular, 'Urls', 'regular');
   }
 
   @override
-  Urls rebuild(void Function(UrlsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Urls rebuild(void Function(UrlsBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   UrlsBuilder toBuilder() => new UrlsBuilder()..replace(this);
@@ -472,10 +412,7 @@ class _$Urls extends Urls {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Urls &&
-        full == other.full &&
-        raw == other.raw &&
-        regular == other.regular;
+    return other is Urls && full == other.full && raw == other.raw && regular == other.regular;
   }
 
   @override
@@ -485,10 +422,7 @@ class _$Urls extends Urls {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Urls')
-          ..add('full', full)
-          ..add('raw', raw)
-          ..add('regular', regular))
+    return (newBuiltValueToStringHelper('Urls')..add('full', full)..add('raw', raw)..add('regular', regular))
         .toString();
   }
 }
@@ -538,8 +472,7 @@ class UrlsBuilder implements Builder<Urls, UrlsBuilder> {
         new _$Urls._(
             full: BuiltValueNullFieldError.checkNotNull(full, 'Urls', 'full'),
             raw: BuiltValueNullFieldError.checkNotNull(raw, 'Urls', 'raw'),
-            regular: BuiltValueNullFieldError.checkNotNull(
-                regular, 'Urls', 'regular'));
+            regular: BuiltValueNullFieldError.checkNotNull(regular, 'Urls', 'regular'));
     replace(_$result);
     return _$result;
   }
@@ -557,15 +490,9 @@ class _$AppState extends AppState {
   @override
   final String? selectedImage;
 
-  factory _$AppState([void Function(AppStateBuilder)? updates]) =>
-      (new AppStateBuilder()..update(updates)).build();
+  factory _$AppState([void Function(AppStateBuilder)? updates]) => (new AppStateBuilder()..update(updates)).build();
 
-  _$AppState._(
-      {this.user,
-      required this.users,
-      required this.reviews,
-      required this.photos,
-      this.selectedImage})
+  _$AppState._({this.user, required this.users, required this.reviews, required this.photos, this.selectedImage})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(users, 'AppState', 'users');
     BuiltValueNullFieldError.checkNotNull(reviews, 'AppState', 'reviews');
@@ -573,8 +500,7 @@ class _$AppState extends AppState {
   }
 
   @override
-  AppState rebuild(void Function(AppStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AppState rebuild(void Function(AppStateBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AppStateBuilder toBuilder() => new AppStateBuilder()..replace(this);
@@ -592,9 +518,7 @@ class _$AppState extends AppState {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc($jc(0, user.hashCode), users.hashCode), reviews.hashCode),
-            photos.hashCode),
+    return $jf($jc($jc($jc($jc($jc(0, user.hashCode), users.hashCode), reviews.hashCode), photos.hashCode),
         selectedImage.hashCode));
   }
 
@@ -618,13 +542,11 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   set user(AppUserBuilder? user) => _$this._user = user;
 
   MapBuilder<String, AppUser>? _users;
-  MapBuilder<String, AppUser> get users =>
-      _$this._users ??= new MapBuilder<String, AppUser>();
+  MapBuilder<String, AppUser> get users => _$this._users ??= new MapBuilder<String, AppUser>();
   set users(MapBuilder<String, AppUser>? users) => _$this._users = users;
 
   ListBuilder<Review>? _reviews;
-  ListBuilder<Review> get reviews =>
-      _$this._reviews ??= new ListBuilder<Review>();
+  ListBuilder<Review> get reviews => _$this._reviews ??= new ListBuilder<Review>();
   set reviews(ListBuilder<Review>? reviews) => _$this._reviews = reviews;
 
   ListBuilder<Photo>? _photos;
@@ -633,8 +555,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
 
   String? _selectedImage;
   String? get selectedImage => _$this._selectedImage;
-  set selectedImage(String? selectedImage) =>
-      _$this._selectedImage = selectedImage;
+  set selectedImage(String? selectedImage) => _$this._selectedImage = selectedImage;
 
   AppStateBuilder();
 
@@ -685,8 +606,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
         _$failedField = 'photos';
         photos.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'AppState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('AppState', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -705,23 +625,16 @@ class _$AppUser extends AppUser {
   @override
   final String? photoUrl;
 
-  factory _$AppUser([void Function(AppUserBuilder)? updates]) =>
-      (new AppUserBuilder()..update(updates)).build();
+  factory _$AppUser([void Function(AppUserBuilder)? updates]) => (new AppUserBuilder()..update(updates)).build();
 
-  _$AppUser._(
-      {required this.uid,
-      required this.username,
-      required this.email,
-      this.photoUrl})
-      : super._() {
+  _$AppUser._({required this.uid, required this.username, required this.email, this.photoUrl}) : super._() {
     BuiltValueNullFieldError.checkNotNull(uid, 'AppUser', 'uid');
     BuiltValueNullFieldError.checkNotNull(username, 'AppUser', 'username');
     BuiltValueNullFieldError.checkNotNull(email, 'AppUser', 'email');
   }
 
   @override
-  AppUser rebuild(void Function(AppUserBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AppUser rebuild(void Function(AppUserBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AppUserBuilder toBuilder() => new AppUserBuilder()..replace(this);
@@ -738,9 +651,7 @@ class _$AppUser extends AppUser {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, uid.hashCode), username.hashCode), email.hashCode),
-        photoUrl.hashCode));
+    return $jf($jc($jc($jc($jc(0, uid.hashCode), username.hashCode), email.hashCode), photoUrl.hashCode));
   }
 
   @override
@@ -803,10 +714,8 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
     final _$result = _$v ??
         new _$AppUser._(
             uid: BuiltValueNullFieldError.checkNotNull(uid, 'AppUser', 'uid'),
-            username: BuiltValueNullFieldError.checkNotNull(
-                username, 'AppUser', 'username'),
-            email: BuiltValueNullFieldError.checkNotNull(
-                email, 'AppUser', 'email'),
+            username: BuiltValueNullFieldError.checkNotNull(username, 'AppUser', 'username'),
+            email: BuiltValueNullFieldError.checkNotNull(email, 'AppUser', 'email'),
             photoUrl: photoUrl);
     replace(_$result);
     return _$result;
@@ -825,15 +734,9 @@ class _$Review extends Review {
   @override
   final DateTime createdAt;
 
-  factory _$Review([void Function(ReviewBuilder)? updates]) =>
-      (new ReviewBuilder()..update(updates)).build();
+  factory _$Review([void Function(ReviewBuilder)? updates]) => (new ReviewBuilder()..update(updates)).build();
 
-  _$Review._(
-      {required this.id,
-      required this.uid,
-      required this.imageId,
-      required this.text,
-      required this.createdAt})
+  _$Review._({required this.id, required this.uid, required this.imageId, required this.text, required this.createdAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'Review', 'id');
     BuiltValueNullFieldError.checkNotNull(uid, 'Review', 'uid');
@@ -843,8 +746,7 @@ class _$Review extends Review {
   }
 
   @override
-  Review rebuild(void Function(ReviewBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Review rebuild(void Function(ReviewBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   ReviewBuilder toBuilder() => new ReviewBuilder()..replace(this);
@@ -862,10 +764,8 @@ class _$Review extends Review {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc($jc(0, id.hashCode), uid.hashCode), imageId.hashCode),
-            text.hashCode),
-        createdAt.hashCode));
+    return $jf(
+        $jc($jc($jc($jc($jc(0, id.hashCode), uid.hashCode), imageId.hashCode), text.hashCode), createdAt.hashCode));
   }
 
   @override
@@ -935,11 +835,9 @@ class ReviewBuilder implements Builder<Review, ReviewBuilder> {
         new _$Review._(
             id: BuiltValueNullFieldError.checkNotNull(id, 'Review', 'id'),
             uid: BuiltValueNullFieldError.checkNotNull(uid, 'Review', 'uid'),
-            imageId: BuiltValueNullFieldError.checkNotNull(
-                imageId, 'Review', 'imageId'),
+            imageId: BuiltValueNullFieldError.checkNotNull(imageId, 'Review', 'imageId'),
             text: BuiltValueNullFieldError.checkNotNull(text, 'Review', 'text'),
-            createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, 'Review', 'createdAt'));
+            createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, 'Review', 'createdAt'));
     replace(_$result);
     return _$result;
   }
