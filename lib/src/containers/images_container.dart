@@ -7,14 +7,12 @@ import 'package:weather_app/src/models/index.dart';
 class ImagesContainer extends StatelessWidget {
   const ImagesContainer({Key? key, required this.builder}) : super(key: key);
 
-  final ViewModelBuilder<BuiltList<Photo>> builder;
+  final ViewModelBuilder<List<Photo>> builder;
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, BuiltList<Photo>>(
-      converter: (Store<AppState> store) {
-        return store.state.photos;
-      },
+    return StoreConnector<AppState, List<Photo>>(
+      converter: (Store<AppState> store) => store.state.photos.asList(),
       builder: builder,
     );
   }

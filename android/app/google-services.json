@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "956591048230",
+    "project_id": "imagesapp-58e62",
+    "storage_bucket": "imagesapp-58e62.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956591048230:android:d7d926cdcf88d6ce95c8e7",
+        "android_client_info": {
+          "package_name": "com.example.dogs_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956591048230-uqt68shjjcuu4cek4qouhoorhjg95tat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjydLypqi2c05t8CMPENczwi75yIZ0DpQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956591048230-uqt68shjjcuu4cek4qouhoorhjg95tat.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

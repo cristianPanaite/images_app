@@ -9,6 +9,10 @@ abstract class Urls implements Built<Urls, UrlsBuilder> {
 
   String get full;
 
+  String get raw;
+
+  String get regular;
+
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
 
   static Serializer<Urls> get serializer => _$urlsSerializer;

@@ -9,3 +9,5 @@ part 'photo.dart';
 part 'index.g.dart';
 part 'urls.dart';
 part 'app_state.dart';
+part 'app_user.dart';
+part 'review.dart';

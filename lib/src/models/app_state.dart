@@ -7,7 +7,15 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
 
   AppState._();
 
+  AppUser? get user;
+
+  BuiltMap<String, AppUser> get users;
+
+  BuiltList<Review> get reviews;
+
   BuiltList<Photo> get photos;
+
+  String? get selectedImage;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
 

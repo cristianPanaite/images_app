@@ -7,6 +7,10 @@ abstract class Photo implements Built<Photo, PhotoBuilder> {
 
   Photo._();
 
+  String get id;
+
+  String get description;
+
   Urls get urls;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
